@@ -114,8 +114,8 @@
 														<td>Secretaría de Educación Infantil</td>
 														<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
 														<td>10 hombre, 20 mujeres</td>
-														<td><a href="#"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
-														<td><a href="#"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#revision_modal"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#observacion_modal"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
 													</tr>
 												</tbody>
 											</table>
@@ -146,8 +146,8 @@
 														<td>$211,123,345,568.77</td>
 														<td><button type="button" class="btn btn-info bg-aqua"><i class="fa fa-search"></i> Avances</button></td>
 														<td><button type="button" class="btn btn-info bg-aqua"><i class="fa fa-search"></i> Avances</button></td>
-														<td><a href="#"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
-														<td><a href="#"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#revision_modal"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#observacion_modal"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
 													</tr>
 													<tr>
 														<td>SADAG78900000</td>
@@ -157,8 +157,8 @@
 														<td>$211,123,345,568.77</td>
 														<td><button type="button" class="btn btn-info bg-aqua"><i class="fa fa-search"></i> Avances</button></td>
 														<td><button type="button" class="btn btn-info bg-aqua"><i class="fa fa-search"></i> Avances</button></td>
-														<td><a href="#"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
-														<td><a href="#"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#revision_modal"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#observacion_modal"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
 													</tr>
 												</tbody>
 											</table>
@@ -192,8 +192,8 @@
 														<td></td>
 														<td></td>
 														<td></td>
-														<td><a href="#"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
-														<td><a href="#"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#revision_modal"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#observacion_modal"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
 													</tr>
 													<tr class="treegrid-2 treegrid-parent-1">
 														<td></td>
@@ -218,8 +218,8 @@
 														<td></td>
 														<td></td>
 														<td></td>
-														<td><a href="#"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
-														<td><a href="#"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#revision_modal"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#observacion_modal"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
 													</tr>
 													<tr class="treegrid-4 treegrid-parent-3">
 														<td></td>
@@ -372,8 +372,8 @@
 														<td></td>
 														<td></td>
 														<td></td>
-														<td><a href="#"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
-														<td><a href="#"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#revision_modal"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#observacion_modal"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
 													</tr>
 													<tr class="treegrid-2 treegrid-parent-1">
 														<td></td>
@@ -388,8 +388,8 @@
 														<td></td>
 														<td></td>
 														<td></td>
-														<td><a href="#"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
-														<td><a href="#"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#revision_modal"><i class="fa fa-check"></i>&nbsp; Revisado</a></td>
+														<td><a href="#" data-toggle="modal" data-target="#observacion_modal"><i class="fa fa-search"></i>&nbsp; Observaciones</a></td>
 													</tr>
 													<tr class="treegrid-4 treegrid-parent-3">
 														<td></td>
@@ -419,6 +419,43 @@
 	<!-- ./wrapper -->
 	
 	<jsp:include page="../js.jsp" />
+	
+	<div class="modal fade bs-example-modal-lg" role="dialog" id="observacion_modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Emitir Observación</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>Observación</label> 
+						<textarea class="form-control" rows="4" placeholder="Máximo 140 caracteres"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary"><i class="icon fa fa-plus-circle"></i> Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade bs-example-modal-lg" role="dialog" id="revision_modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">¿Seguro que desea cambiar el estatus del proyecto a Revisado?</h4>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					<button type="button" class="btn btn-primary"><i class="icon fa fa-plus-check"></i> Sí</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<script>
 		$(function() {

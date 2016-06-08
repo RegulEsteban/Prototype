@@ -15,11 +15,11 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					Registrar Proyecto <small>Proyectos de Inversión</small>
+					Observaciones <small>Proyectos de Inversión</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-					<li class="active">Registrar Proyecto</li>
+					<li class="active">Observaciones</li>
 				</ol>
 			</section>
 
@@ -73,6 +73,9 @@
 											
 											<div class="row">
 					                        	<div class="col-md-12">
+					                        		<div class="alert alert-danger" role="alert">
+														<p><i class="fa fa-warning"></i> Esta es una observación del detalle del proyecto.</p>
+													</div>
 													<h4>Detalles de proyecto</h4>
 												</div>
 												<div class="col-md-6">

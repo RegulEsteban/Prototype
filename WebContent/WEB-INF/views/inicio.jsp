@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="jstl.jsp" />
+<%@include file="jstl.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +7,9 @@
 </head>
 <body class="hold-transition skin-black-light layout-top-nav">
 	<div class="wrapper">
-		<jsp:include page="menu.jsp" />
+		<%@include file="menu.jsp"%>
 
-		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>Bienvenido <small>Panel de control</small></h1>
 				<ol class="breadcrumb">
@@ -23,18 +21,53 @@
 			<section class="content">
 				<!-- Small boxes (Stat box) -->
 				<div class="row">
-
+					<div class="col-md-12">
+						<core:if test="${esAdmin eq true}">
+						
+							<nav class="navbar navbar-inverse">
+							  <div class="container-fluid">
+							    <!-- Brand and toggle get grouped for better mobile display -->
+							    <div class="navbar-header">
+							      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							        <span class="sr-only">Toggle navigation</span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+							      </button>
+							      <a class="navbar-brand" href="#"><i class="fa fa-cog"></i></a>
+							    </div>
+							
+							    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							      <ul class="nav navbar-nav">
+							      <li><a href="seguimiento.do">Seguimiento</a></li>
+							        <li><a href="revision-proyectos.do">Revisión SHCP</a></li>
+							        <li><a href="administracion-campos.do">Administración de Campos</a></li>
+							        <li class="dropdown">
+							          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración de Catálogos <span class="caret"></span></a>
+							          <ul class="dropdown-menu">
+							            <li><a href="catalogos.do?tipo=tipo_proyecto">Tipo de Proyecto</a></li>
+							            <li><a href="#">Clasificación de Proyectos</a></li>
+							            <li><a href="#">Unidades de Medida</a></li>
+							          </ul>
+							        </li>
+							        <li><a href="reportes.do">Reportes</a></li>
+							      </ul>
+							    </div>
+							  </div>
+							</nav>
+						
+						</core:if>
+					</div>
+					
 					<div class="col-md-6">
 						<div class="box box-default">
 							<div class="box-header with-border">
 								<i class="fa fa-refresh"></i>
 								<h3 class="box-title">Ejercicio y Destino</h3>
 							</div>
-							<!-- /.box-header -->
+							
 							<div class="box-body">
-
 								<div class="col-lg-6 col-xs-6">
-									<!-- small box -->
 									<div class="small-box bg-green">
 										<a href="#" class="small-box-header">Ejercicio del gasto</a>
 										<div class="inner">
@@ -58,14 +91,9 @@
 										<a href="#" class="small-box-footer toggle-visibility" data-target="#divAvanceProyect">Ver más <i class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
-								<!-- ./col -->
-
 							</div>
-							<!-- /.box-body -->
 						</div>
-						<!-- /.box -->
 					</div>
-					<!-- /.col -->
 
 					<div class="col-md-6">
 						<div class="box box-default">
@@ -73,7 +101,6 @@
 								<i class="fa fa-thumbs-o-up"></i>
 								<h3 class="box-title">Resultados</h3>
 							</div>
-							<!-- /.box-header -->
 							<div class="box-body">
 
 								<div class="col-lg-6 col-xs-6">
@@ -124,13 +151,6 @@
 								<h3 class="box-title">Ejercicio del gasto</h3>
 							</div>
 							<div class="box-body">
-								<div class="col-md-12">
-							    	<div class="progress" id="progress1">
-							            <div class="progress-bar progress-bar-striped progress-bar-info" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
-							            35%
-							            </div>
-							        </div>
-							    </div>
 							    <div class="col-md-3">
 							    	<div class="box">
 									 	<div class="box-header with-border">
@@ -138,15 +158,15 @@
 									  	</div>
 									  	<div class="box-body">
 									    	<div class="info-box">
-												<span class="info-box-icon bg-aqua"><i class="fa fa-calculator"></i></span>
+												<span class="info-box-icon bg-green"><i class="fa fa-calculator"></i></span>
 											  	<div class="info-box-content">
 											    	<span class="info-box-text">Ejercicio del Gasto</span>
 											    	<span class="info-box-number">139</span>
 											  	</div>
 										  	</div>
-										  	<a class="btn btn-info btn-block" href="registro-ejercicio-gasto.do" role="button">Carga Individual</a>
-										  	<a class="btn btn-info btn-block" href="registro-masivo-ejercicio-gasto.do" role="button">Carga Masiva</a>
-										  	<a class="btn btn-info btn-block" href="ejercicio-municipios.do" role="button">Cargar Ejercicio de Municipios</a>
+										  	<a class="btn btn-success btn-block" href="registro-ejercicio-gasto.do" role="button">Carga Individual</a>
+										  	<a class="btn btn-success btn-block" href="registro-masivo-ejercicio-gasto.do" role="button">Carga Masiva</a>
+										  	<a class="btn btn-success btn-block" href="ejercicio-municipios.do" role="button">Cargar Ejercicio de Municipios</a>
 									  	</div>
 									</div>
 							    </div>
@@ -154,19 +174,16 @@
 							    	<div class="box">
 									 	<div class="box-header with-border">
 									    	<h3 class="box-title">Revisión de Entidad Federativa</h3>
-									    	<div class="box-tools pull-right">
-									      		<span class="label label-primary">Label</span>
-									    	</div><!-- /.box-tools -->
-									  	</div><!-- /.box-header -->
+									  	</div>
 									  	<div class="box-body">
 									    	<div class="info-box">
-												<span class="info-box-icon bg-aqua"><i class="fa fa-calculator"></i></span>
+												<span class="info-box-icon bg-green"><i class="fa fa-calculator"></i></span>
 											  	<div class="info-box-content">
 											    	<span class="info-box-text">Proyectos en revisión</span>
 											    	<span class="info-box-number">139</span>
 											  	</div>
 										  	</div>
-										  	<a class="btn btn-info btn-block" href="#" role="button">Ver Observaciones</a>
+										  	<a class="btn btn-success btn-block" href="#" role="button">Ver Observaciones</a>
 									  	</div><!-- /.box-body -->
 									</div><!-- /.box -->
 							    </div>
@@ -177,13 +194,13 @@
 									  	</div><!-- /.box-header -->
 									  	<div class="box-body">
 									    	<div class="info-box">
-												<span class="info-box-icon bg-aqua"><i class="fa fa-calculator"></i></span>
+												<span class="info-box-icon bg-green"><i class="fa fa-calculator"></i></span>
 											  	<div class="info-box-content">
 											    	<span class="info-box-text">Proyectos con Observaciones</span>
 											    	<span class="info-box-number">139</span>
 											  	</div>
 										  	</div>
-										  	<a class="btn btn-info btn-block" href="#" role="button">Ver Observaciones</a>
+										  	<a class="btn btn-success btn-block" href="#" role="button">Ver Observaciones</a>
 									  	</div><!-- /.box-body -->
 									</div><!-- /.box -->
 							    </div>
@@ -194,13 +211,13 @@
 									  	</div><!-- /.box-header -->
 									  	<div class="box-body">
 									    	<div class="info-box">
-												<span class="info-box-icon bg-aqua"><i class="fa fa-calculator"></i></span>
+												<span class="info-box-icon bg-green"><i class="fa fa-calculator"></i></span>
 											  	<div class="info-box-content">
 											    	<span class="info-box-text">Proyectos Validados</span>
 											    	<span class="info-box-number">139</span>
 											  	</div>
 										  	</div>
-										  	<a class="btn btn-info btn-block" href="consultar-ejercicio-gasto.do" role="button">Registra Avances</a>
+										  	<a class="btn btn-success btn-block" href="consultar-ejercicio-gasto.do" role="button">Registra Avances</a>
 									  	</div><!-- /.box-body -->
 									</div><!-- /.box -->
 							    </div>
@@ -210,7 +227,15 @@
 						<div class="box box-info dinamic-div" id="divAvanceProyect">
 							<div class="box-header">
 								<i class="fa fa-map-marker"></i>
-								<h3 class="box-title">Proyectos de inversión</h3>
+								<core:choose>
+									<core:when test="${esRevisor eq true || esObservador eq true}">
+										<h3 class="box-title">Proyectos de inversión - Entidades Federativas</h3>
+									</core:when>
+									<core:otherwise>
+										<h3 class="box-title">Proyectos de inversión</h3>
+									</core:otherwise>
+								</core:choose>
+								
 							</div>
 							<div class="box-body">
 							    <div class="col-md-3">
@@ -227,21 +252,19 @@
 											    	<p class="info-box-number-text">Proyectos precargados <span class="info-box-number">29</span></p>
 											  	</div>
 										  	</div>
-										  	${esRevisor}
 										  	<core:choose>
-	                                            <core:when test="${esCaptura == 'true'}">
-	                                                <a class="btn btn-info bg-aqua btn-block" href="consultar.do?page=avance" role="button">Registra Avances</a>
+	                                            <core:when test="${esCaptura eq true || esAdmin eq true}">
+	                                                <a class="btn btn-info bg-aqua btn-block" href="consultar.do?page=avances" role="button">Registra Avances</a>
 										  			<a class="btn btn-info bg-aqua btn-block" href="registro-proyecto.do" role="button">Carga Individual</a>
 										  			<a class="btn btn-info bg-aqua btn-block" href="registro-masivo-proyecto.do" role="button">Carga Masiva</a>
 	                                            </core:when>
-	                                            <core:when test="${esRevisor == 'true'}">
+	                                            <core:when test="${esRevisor eq true || esObservador eq true}">
 	                                                <div class="alert alert-info bg-aqua alert-dismissable">
 									                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 									                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
 									                    Los ejecutores se encuentran cargando información.
 							                		</div>
 	                                            </core:when>
-
                                         	</core:choose>
 										  	
 									  	</div>
@@ -260,13 +283,19 @@
 											    	<span class="info-box-number">13</span>
 											  	</div>
 										  	</div>
-										  	<div class="alert alert-info bg-aqua alert-dismissable">
-							                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
-							                    Los proyectos se encuentran en revisión por parte de la Entidad Federativa.
-							                </div>
-							                <a class="btn btn-info bg-aqua btn-block" href="revision.do" role="button">Revisión Individual</a>
-										  	<a class="btn btn-info bg-aqua btn-block" href="revision-masiva.do" role="button">Revisión Masiva</a>
+										  	<core:choose>
+	                                            <core:when test="${esCaptura eq true}">
+	                                                <div class="alert alert-info bg-aqua alert-dismissable">
+									                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
+									                    Los proyectos se encuentran en revisión por parte de la Entidad Federativa.
+									                </div>
+	                                            </core:when>
+	                                            <core:when test="${esRevisor eq true || esAdmin eq true || esObservador eq true}">
+	                                                <a class="btn btn-info bg-aqua btn-block" href="revision.do" role="button">Revisión Individual</a>
+										  			<a class="btn btn-info bg-aqua btn-block" href="revision-masiva.do" role="button">Revisión Masiva</a>
+	                                            </core:when>
+                                        	</core:choose>
 									  	</div>
 									</div>
 							    </div>
@@ -283,14 +312,21 @@
 											    	<span class="info-box-number">59</span>
 											  	</div>
 										  	</div>
-										  	<a class="btn btn-info bg-aqua btn-block" href="consultar.do?page=observaciones" role="button">Ver Observaciones</a>
-										  	<div class="alert alert-info bg-aqua alert-dismissable">
-							                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-							                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
-							                    Los ejecutores se encuentra antendiendo las observaciones.
-							                </div>
-									  	</div><!-- /.box-body -->
-									</div><!-- /.box -->
+										  	
+										  	<core:choose>
+	                                            <core:when test="${esCaptura eq true || esAdmin eq true}">
+	                                        		<a class="btn btn-info bg-aqua btn-block" href="consultar.do?page=observaciones" role="button">Ver Observaciones</a>        
+	                                            </core:when>
+	                                            <core:when test="${esRevisor eq true || esObservador eq true}">
+	                                                <div class="alert alert-info bg-aqua alert-dismissable">
+									                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
+									                    Los ejecutores se encuentra antendiendo las observaciones.
+									                </div>
+	                                            </core:when>
+                                        	</core:choose>
+									  	</div>
+									</div>
 							    </div>
 							    <div class="col-md-3">
 							    	<div class="box">
@@ -305,11 +341,126 @@
 											    	<span class="info-box-number">18</span>
 											  	</div>
 										  	</div>
-										  	<a class="btn btn-info bg-aqua btn-block" href="#" role="button">Ver Reportes</a>
+										  	<a class="btn btn-info bg-aqua btn-block" href="reportes.do" role="button">Ver Reportes</a>
 									  	</div><!-- /.box-body -->
 									</div><!-- /.box -->
 							    </div>
 							</div>
+							<core:if test="${esRevisor eq true || esObservador eq true}">
+								<div class="box-header" style="border-radius: 3px; border-top: 3px solid #01bfbd;">
+									<i class="fa fa-map-marker"></i>
+									<h3 class="box-title">Proyectos de inversión - Municipios</h3>
+								</div>
+								<div class="box-body">
+								    <div class="col-md-3">
+								    	<div class="box">
+										 	<div class="box-header with-border">
+										    	<h3 class="box-title">Captura</h3>
+										  	</div>
+										  	<div class="box-body">
+										    	<div class="info-box">
+													<span class="info-box-icon bg-aqua"><i class="fa fa-map-marker"></i></span>
+												  	<div class="info-box-content">
+												    	<span class="info-box-text">Proyectos Registrados</span>
+												    	<p class="info-box-number-text">Proyectos cargados en trimestres anteriores <span class="info-box-number">76</span></p>
+												    	<p class="info-box-number-text">Proyectos precargados <span class="info-box-number">29</span></p>
+												  	</div>
+											  	</div>
+											  	<core:choose>
+		                                            <core:when test="${esCaptura eq true}">
+		                                                <a class="btn btn-info bg-aqua btn-block" href="consultar.do?page=avances" role="button">Registra Avances</a>
+											  			<a class="btn btn-info bg-aqua btn-block" href="registro-proyecto.do" role="button">Carga Individual</a>
+											  			<a class="btn btn-info bg-aqua btn-block" href="registro-masivo-proyecto.do" role="button">Carga Masiva</a>
+		                                            </core:when>
+		                                            <core:when test="${esRevisor eq true || esObservador eq true}">
+		                                                <div class="alert alert-info bg-aqua alert-dismissable">
+										                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+										                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
+										                    Los ejecutores se encuentran cargando información.
+								                		</div>
+		                                            </core:when>
+	                                        	</core:choose>
+											  	
+										  	</div>
+										</div>
+								    </div>
+								    <div class="col-md-3">
+								    	<div class="box">
+										 	<div class="box-header with-border">
+										    	<h3 class="box-title">Revisión de Entidad Federativa</h3>
+										  	</div>
+										  	<div class="box-body">
+										    	<div class="info-box">
+													<span class="info-box-icon bg-aqua"><i class="fa fa-map-marker"></i></span>
+												  	<div class="info-box-content">
+												    	<span class="info-box-text">Proyectos en revisión</span>
+												    	<span class="info-box-number">13</span>
+												  	</div>
+											  	</div>
+											  	<core:choose>
+		                                            <core:when test="${esCaptura eq true}">
+		                                                <div class="alert alert-info bg-aqua alert-dismissable">
+										                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+										                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
+										                    Los proyectos se encuentran en revisión por parte de la Entidad Federativa.
+										                </div>
+		                                            </core:when>
+		                                            <core:when test="${esRevisor eq true || esObservador eq true}">
+		                                                <a class="btn btn-info bg-aqua btn-block" href="revision.do" role="button">Revisión Individual</a>
+											  			<a class="btn btn-info bg-aqua btn-block" href="revision-masiva.do" role="button">Revisión Masiva</a>
+		                                            </core:when>
+	                                        	</core:choose>
+										  	</div>
+										</div>
+								    </div>
+								    <div class="col-md-3">
+								    	<div class="box">
+										 	<div class="box-header with-border">
+										    	<h3 class="box-title">Observaciones</h3>
+										  	</div><!-- /.box-header -->
+										  	<div class="box-body">
+										    	<div class="info-box">
+													<span class="info-box-icon bg-aqua"><i class="fa fa-map-marker"></i></span>
+												  	<div class="info-box-content">
+												    	<span class="info-box-text">Proyectos con Observaciones</span>
+												    	<span class="info-box-number">59</span>
+												  	</div>
+											  	</div>
+											  	
+											  	<core:choose>
+		                                            <core:when test="${esCaptura eq true}">
+		                                        		<a class="btn btn-info bg-aqua btn-block" href="consultar.do?page=observaciones" role="button">Ver Observaciones</a>        
+		                                            </core:when>
+		                                            <core:when test="${esRevisor eq true || esObservador eq true}">
+		                                                <div class="alert alert-info bg-aqua alert-dismissable">
+										                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+										                    <h4><i class="icon fa fa-clock-o"></i> ¡Espera!</h4>
+										                    Los ejecutores se encuentra antendiendo las observaciones.
+										                </div>
+		                                            </core:when>
+	                                        	</core:choose>
+										  	</div>
+										</div>
+								    </div>
+								    <div class="col-md-3">
+								    	<div class="box">
+										 	<div class="box-header with-border">
+										    	<h3 class="box-title">Reporte</h3>
+										  	</div><!-- /.box-header -->
+										  	<div class="box-body">
+										    	<div class="info-box">
+													<span class="info-box-icon bg-aqua"><i class="fa fa-map-marker"></i></span>
+												  	<div class="info-box-content">
+												    	<span class="info-box-text">Proyectos Validados</span>
+												    	<span class="info-box-number">18</span>
+												  	</div>
+											  	</div>
+											  	<a class="btn btn-info bg-aqua btn-block" href="reportes.do" role="button">Ver Reportes</a>
+										  	</div><!-- /.box-body -->
+										</div><!-- /.box -->
+								    </div>
+								</div>
+							</core:if>
 						</div>
 						
 						<div class="box box-warning dinamic-div" id="divIndicador">

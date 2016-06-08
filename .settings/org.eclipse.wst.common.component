@@ -2,6 +2,9 @@
     <wb-module deploy-name="Prototype">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="jstl-1.2.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/libs/javax-servlet-1.2/jstl-1.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="Prototype"/>
         <property name="java-output-path" value="/Prototype/build/classes"/>
     </wb-module>

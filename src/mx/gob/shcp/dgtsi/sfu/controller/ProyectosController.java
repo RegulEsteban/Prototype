@@ -101,12 +101,12 @@ public class ProyectosController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/consultar.do")
-	public String consulta(@RequestParam String typeView, Model modelo){
+	public String consulta(@RequestParam String page, Model modelo){
 		
-		if(typeView.equalsIgnoreCase("avances")){
+		if(page.equalsIgnoreCase("avances")){
 			modelo.addAttribute("avance", true);
 			modelo.addAttribute("observaciones", false);
-		}else if(typeView.equalsIgnoreCase("observaciones")){
+		}else if(page.equalsIgnoreCase("observaciones")){
 			modelo.addAttribute("avance", false);
 			modelo.addAttribute("observaciones", true);
 		}else{
@@ -140,10 +140,11 @@ public class ProyectosController {
 		return "proyectos/revisar"; 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/ver-observaciones.do")
+	@RequestMapping(method = RequestMethod.GET, value = "/observaciones.do")
 	public String observaciones(Model modelo){
 		
 		return "proyectos/ver_observaciones"; 		
 	}
+	
 	
 }

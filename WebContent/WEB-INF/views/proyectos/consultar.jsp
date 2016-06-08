@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="../jstl.jsp" />
+<%@include file="../jstl.jsp"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -82,138 +82,35 @@
 								<table id="detalles_table" class="table table-bordered table-striped">
 									<thead>
 										<tr>
+											<th>Folio</th>
 											<th>Nombre del Proyecto</th>
 											<th>Tipo</th>
 											<th>Clasificación</th>
 											<th>Institución Ejecutora</th>
 											<th>Dirección</th>
-											<th>Fecha de Inicio</th>
-											<th>Fecha estimada de término</th>
 											<th>Beneficiados</th>
 											<th>Acción</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
+											<td>ASDGSE3426923469</td>
 											<td>Escuela Primaria Benito Juarez</td>
 											<td>Aquí va el tipo</td>
 											<td>Clasificación</td>
 											<td>Secretaría de Educación Infantil</td>
 											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
 											<td>10 hombre, 20 mujeres</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Autopista México - La Marquesa</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Comunicaciones y Transportes</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>SB</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Escuela Primaria Benito Juarez</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Educación Infantil</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>10 hombre, 20 mujeres</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Autopista México - La Marquesa</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Comunicaciones y Transportes</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>SB</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Escuela Primaria Benito Juarez</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Educación Infantil</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>10 hombre, 20 mujeres</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Autopista México - La Marquesa</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Comunicaciones y Transportes</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>SB</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Escuela Primaria Benito Juarez</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Educación Infantil</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>10 hombre, 20 mujeres</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Autopista México - La Marquesa</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Comunicaciones y Transportes</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>SB</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Escuela Primaria Benito Juarez</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Educación Infantil</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>10 hombre, 20 mujeres</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Autopista México - La Marquesa</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Comunicaciones y Transportes</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>SB</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
-										</tr>
-										<tr>
-											<td>Escuela Primaria Benito Juarez</td>
-											<td>Aquí va el tipo</td>
-											<td>Clasificación</td>
-											<td>Secretaría de Educación Infantil</td>
-											<td>Av. Constiruyentes No. 1001, Belén de las flores</td>
-											<td>01/02/2015</td>
-											<td>02/11/2022</td>
-											<td>10 hombre, 20 mujeres</td>
-											<td><a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a></td>
+											<td>
+												<core:choose>
+													<core:when test="${avance eq true}">
+														<a href="registrar-avance.do"><i class="fa fa-pencil"></i>&nbsp; Registrar Avance</a>
+													</core:when>
+													<core:when test="${observaciones eq true}">
+														<a href="observaciones.do"><i class="fa fa-comments"></i>&nbsp; Ver Observaciones</a>
+													</core:when>
+												</core:choose>
+											</td>
 										</tr>
 									</tbody>
 								</table>

@@ -11,9 +11,14 @@ public class MainController {
 	@RequestMapping(method = RequestMethod.GET, value = "/inicio.do")
 	public String inicio(Model model){
 		
-		model.addAttribute("esCaptura", "false");
-		model.addAttribute("esRevisor", "true");
+		model.addAttribute("esCaptura", true);
+//		model.addAttribute("esRevisor", true);
+//		model.addAttribute("esObservador", true);
 		
+		model.addAttribute("user_municipio", "Asientos");
+		model.addAttribute("user_entidad_fed", "Aguascalientes");
+		model.addAttribute("user_dependencia", "Secretaría de Hacienda y Crédito Público");
+//		model.addAttribute("esAdmin", true);
 		
 		return "inicio";
 	}

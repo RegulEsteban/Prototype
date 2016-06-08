@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <noscript>
-    <p>Por favor de habilitar Javascript para un buen funcionamiento en la p�gina.</p>
+	<div class="alert alert-danger" role="alert">
+    	<h3><i class="fa fa-warning"></i> Por favor de habilitar Javascript para un buen funcionamiento en la página.</h3>
+    </div>
 </noscript>
 <header class="main-header">
 <!-- esto es un cambio -->
@@ -7,15 +10,14 @@
 	<nav class="navbar navbar-static-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">
+				<a href="http://www.hacienda.gob.mx" class="navbar-brand">
 					<img alt="Brand" src="./THEME_SFU/dist/img/shcp_logo.jpg" style="max-width:200px; margin-top: -7px;margin-right: 15px;">
-<!-- 					<img alt="Brand" src="./THEME_SFU/dist/img/sfu_logo.png" style="max-width:200px; margin-top: -7px;"> -->
 				</a>
-				<a href="#" class="navbar-brand">
+				<a href="inicio.do" class="navbar-brand">
 					<img alt="Brand" src="./THEME_SFU/dist/img/sfu_logo.png" class="brand-img" style="max-width:200px; margin-top: -7px;">
 				</a>
 			</div>
-
+			
 			<div class="navbar-custom-menu">
 				<ul class="nav navbar-nav">
 					<!-- Messages: style can be found in dropdown.less-->
@@ -104,35 +106,37 @@
 
 					<!-- User Account: style can be found in dropdown.less -->
 					<li class="dropdown user user-menu">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
-							<img src="./THEME_SFU/dist/img/asientos-ags.jpg" class="user-image" alt="User Image"> 
-							<span class="hidden-xs-user">Aguascalientes/Asientos</span>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="./THEME_SFU/dist/img/asientos-ags.jpg" class="user-image" alt="User Image">
+							<core:choose>
+								<core:when test="${esAdmin eq true}">
+									<span class="hidden-xs-user">${user_dependencia}</span>
+								</core:when>
+								<core:otherwise>
+									<span class="hidden-xs-user">${user_entidad_fed}/${user_municipio}</span>
+								</core:otherwise>
+							</core:choose>
 						</a>
 						<ul class="dropdown-menu">
 							<!-- User image -->
 							<li class="user-header">
 								<img src="./THEME_SFU/dist/img/asientos-ags.jpg" class="img-circle" alt="User Image">
-								<p>Aguascalientes/Asientos <small>Member since Nov. 2012</small></p>
+								<core:choose>
+									<core:when test="${esAdmin eq true}">
+										<p>${user_dependencia}</p>
+									</core:when>
+									<core:otherwise>
+										<p>${user_municipio} <small>${user_entidad_fed}</small></p>
+									</core:otherwise>
+								</core:choose>
+								
 							</li>
-							<!-- Menu Body -->
-							<li class="user-body">
-								<div class="col-xs-4 text-center">
-									<a href="#">Followers</a>
-								</div>
-								<div class="col-xs-4 text-center">
-									<a href="#">Sales</a>
-								</div>
-								<div class="col-xs-4 text-center">
-									<a href="#">Friends</a>
-								</div>
-							</li>
-							<!-- Menu Footer-->
 							<li class="user-footer">
 								<div class="pull-left">
-									<a href="#" class="btn btn-default btn-flat">Profile</a>
+									<a href="#" class="btn btn-default btn-flat">Perfil</a>
 								</div>
 								<div class="pull-right">
-									<a href="#" class="btn btn-default btn-flat">Sign out</a>
+									<a href="#" class="btn btn-default btn-flat">Cerrar Sesión</a>
 								</div>
 							</li>
 						</ul>

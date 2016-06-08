@@ -73,10 +73,10 @@
 											
 											<div class="row">
 					                        	<div class="col-md-12">
-													<h4>Detalles de proyecto</h4>
-													<button type="button" class="btn btn-primary pull-right">
+													<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#observacion_modal">
 														<i class="fa fa-comment"></i>&nbsp;&nbsp; Emitir Observación
 													</button>
+													<h4>Detalles de proyecto</h4>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
@@ -185,13 +185,13 @@
 										<div class="tab-pane fade" id="profile">
 											<div class="row">
 												<div class="col-md-12">
-													<h4>Fuente de Financiamiento</h4>
-													<button type="button" class="btn btn-primary pull-right">
+													<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#observacion_modal">
 														<i class="fa fa-comment"></i>&nbsp;&nbsp; Emitir Observación
 													</button>
+													<h4>Fuente de Financiamiento</h4>
 												</div>
 												
-												<div class="col-md-12">
+												<div class="col-md-3">
 													<div class="form-group">
 														<label for="montoGlobal">Monto Global Aprobado</label>
 														<div class="input-group">
@@ -201,6 +201,12 @@
 															<input type="text" class="form-control" value="aqui va algo" disabled="disabled">
 														</div>
 													</div>
+												</div>
+												
+												<div class="col-md-9">
+												</div>
+												
+												<div class="col-md-12">
 
 													<table id="ff_table" class="table table-bordered table-striped">
 														<thead>
@@ -293,27 +299,21 @@
 										<div class="tab-pane fade" id="messages">
 											<div class="row">
 												<div class="col-md-12">
+													<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#observacion_modal">
+														<i class="fa fa-comment"></i>&nbsp;&nbsp; Emitir Observación
+													</button>
 													<h4>Información de obra por contrato o administración directa</h4>
 													<hr>
 												</div>
 												
-												<div class="col-md-12">
-													<div class="col-md-3">
-														<div class="form-group">
-															<label>Comprometido</label>
-															<input type="number" class="form-control" id="comprometido_contratos" value="12345678" disabled="disabled">
-														</div>
+												<div class="col-md-3">
+													<div class="form-group">
+														<label>Comprometido</label>
+														<input type="number" class="form-control" id="comprometido_contratos" value="12345678" disabled="disabled">
 													</div>
-													
-													<div class="col-md-3">
-													</div>
-													<div class="col-md-3">
-													</div>
-													<div class="col-md-3">
-														<button type="button" class="btn btn-primary pull-right">
-															<i class="fa fa-comment"></i>&nbsp;&nbsp; Emitir Observación
-														</button>
-													</div>
+												</div>
+												
+												<div class="col-md-9">
 												</div>
 												
 												<div class="col-md-12">
@@ -364,10 +364,10 @@
 										<div class="tab-pane fade" id="settings">
 											<div class="row">
 					                        	<div class="col-md-12">
-													<h4>Fotografía de Inicio</h4>
-													<button type="button" class="btn btn-primary pull-right">
+					                        		<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#observacion_modal">
 														<i class="fa fa-comment"></i>&nbsp;&nbsp; Emitir Observación
 													</button>
+													<h4>Fotografía de Inicio</h4>
 												</div>
 												<div class="col-md-4">	
 
@@ -450,6 +450,27 @@
 		
 	</div>
 	<!-- ./wrapper -->
+	
+	<div class="modal fade bs-example-modal-lg" role="dialog" id="observacion_modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Emitir Observación</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>Observación</label> 
+						<textarea class="form-control" rows="4" placeholder="Máximo 140 caracteres"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary"><i class="icon fa fa-plus-circle"></i> Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<jsp:include page="../js.jsp" />
 	

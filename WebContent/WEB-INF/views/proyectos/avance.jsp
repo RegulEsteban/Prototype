@@ -156,15 +156,6 @@
 																</fieldset> 
 															</form>
 														</li>
-							                            <li class="pull-right">
-							                            	<form class="form-horizontal text-center" id="profile_form" name="profile_form" role="form">
-																<fieldset>
-																	<button type="submit" href="#home" name="profile_form" class="btn-submit btn btn-default btn-lg">
-																		<i class="fa fa-arrow-left"></i>&nbsp;&nbsp; Anterior
-																	</button> 
-																</fieldset> 
-															</form>
-														</li>
 							                        </ul>
 												</div>
 											</div>

@@ -239,7 +239,7 @@
 													<h4>Fuente de Financiamiento</h4>
 												</div>
 												
-												<div class="col-lg-8 col-xs-6">
+												<div class="col-md-8">
 													<div class="form-group">
 														<label for="montoGlobal">Monto Global Aprobado</label>
 														<div class="input-group">
@@ -251,7 +251,7 @@
 														<!-- /.input group -->
 													</div>
 												</div>
-												<div class="col-lg-4 col-xs-6">
+												<div class="col-md-4">
 													<div class="form-group">
 														<label for="montoGlobal"></label>
 														<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">
@@ -260,7 +260,7 @@
 													</div>
 												</div>
 												
-												
+												<hr>
 												<div class="col-md-12">
 													<table id="ff_table" class="table table-bordered table-striped">
 														<thead>
@@ -280,7 +280,7 @@
 												<div class="col-md-12">
 													<h4>Avance Financiero</h4>
 												</div>
-												<div class="col-lg-4 col-xs-6">
+												<div class="col-md-4">
 													<div class="form-group">
 														<label for="montoGlobal"></label>
 														<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#registra_avance_modal">
@@ -288,7 +288,7 @@
 														</button>
 													</div>
 												</div>
-												<div class="col-lg-8 col-xs-6">
+												<div class="col-md-8">
 												</div>
 												<div class="col-md-12">
 													<table id="af_table" class="table table-bordered table-striped">
@@ -315,7 +315,7 @@
 												<div class="col-md-12">
 													<h4>Avance Físico</h4>
 												</div>
-												<div class="col-lg-4 col-xs-6">
+												<div class="col-md-4">
 													<div class="form-group">
 														<label for="montoGlobal"></label>
 														<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#registra_avance_fisico_modal">
@@ -323,10 +323,16 @@
 														</button>
 													</div>
 												</div>
-												<div class="col-lg-8 col-xs-6">
+												<div class="col-md-4">
 													<div class="form-group">
 														<label>Meta</label>
 														<input type="number" class="form-control" id="" value="3456" disabled="disabled">
+													</div>
+												</div>
+												<div class="col-md-4">
+													<div class="form-group">
+														<label>Unidad de Medida</label>
+														<input type="text" class="form-control" id="" value="Kilometros" disabled="disabled">
 													</div>
 												</div>
 												<div class="col-md-12">
