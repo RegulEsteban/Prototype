@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Context antiJARLocking="true" reloadable="false">
+
+	<Resource name="jdbc/SFU" auth="Container" type="javax.sql.DataSource"
+		username="SFU" password="123" driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@//localhost:1521:xe" maxActive="5"
+		maxIdle="2" validationQuery="select 1 from dual" />
+
+</Context>

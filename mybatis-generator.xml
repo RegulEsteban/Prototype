@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry location="D:\libs\ojdbc14.jar" />
+	
+	<!-- Contexto de Proyectos -->
+	
+    <context id="proyectos" targetRuntime="MyBatis3">
+
+        <jdbcConnection 
+        	driverClass="oracle.jdbc.driver.OracleDriver" 
+        	connectionURL="jdbc:oracle:thin:@localhost:1521:xe" 
+        	userId="SFU" 
+        	password="123">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="mx.gob.shcp.dgtsi.sfu.proyectos.model" targetProject="Prototype">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mx.gob.shcp.dgtsi.sfu.proyectos.repository" targetProject="Prototype">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="mx.gob.shcp.dgtsi.sfu.proyectos.repository" targetProject="Prototype">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+		
+		<!-- **************   Aquí empiezan las tablas ****************** -->
+		
+        <table tableName="AVANCE_FINANCIERO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_AVANCE_FINANCIERO" sqlStatement="SELECT ID_AVANCE_FINANCIERO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="AVANCE_FISICO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_AVANCE_FISICO" sqlStatement="SELECT ID_AVANCE_FISICO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="AVANCE_FISICO_MAPA">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_AVANCE_FISICO_MAPA" sqlStatement="SELECT ID_AVANCE_FISICO_MAPA_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="BENEFICIARIO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_BENEFICIARIO" sqlStatement="SELECT ID_BENEFICIARIO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="CAMPOS_PROYECTO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_CAMPO" sqlStatement="SELECT ID_CAMPO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="CLASIF_PROYECTO_CAT">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_CLASIF_PROYECTO" sqlStatement="select MAX(ID_CLASIF_PROYECTO) + 1 from CLASIF_PROYECTO_CAT" identity="false" />
+        </table>
+
+        <table tableName="CONTRATO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_CONTRATO" sqlStatement="SELECT ID_CONTRATO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="DETALLE_AVANCE_CONTRATO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_DETALLE_AVANCE_CONTRATO" sqlStatement="SELECT ID_DETALLE_AVANCE_CONTRATO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="DETALLE_AVANCE_PROYECTO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_DETALLE" sqlStatement="SELECT ID_DETALLE_AVANCE_PROYECTO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="DETALLE_CAMPO_PROGRAMA">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_CAMPO_PROGRAMA" sqlStatement="SELECT ID_CAMPO_PROGRAMA_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="DETALLE_EJERCICIO_RECURSO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_EJERCICIO_RECURSO" sqlStatement="SELECT ID_EJERCICIO_RECURSO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="DETALLE_PROYECTO_RECURSO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_DETALLE_PROYECTO_RECURSO" sqlStatement="SELECT ID_PROYECTO_RECURSO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+        <table tableName="EJERCICIO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_EJERCICIO" sqlStatement="SELECT ID_EJERCICIOL_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="ESTADO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_ESTADO" sqlStatement="SELECT ID_ESTADO_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="IMAGENES_AVANCE">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_IMAGENES_AVANCE" sqlStatement="SELECT IMAGENES_AVANCE_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="INSTITUCION">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_INSTITUCION" sqlStatement="SELECT INSTITUCION_ID_INSTITUCION_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="MAPA_AVANCE">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_MAPA_AVANCE" sqlStatement="SELECT ID_MAPA_AVANCE_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="MUNICIPIO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_MUNICIPIO" sqlStatement="SELECT ID_MUNICIPIO_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="PARTIDA_GENERICA">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_PARTIDA" sqlStatement="SELECT ID_PARTIDA_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="PROGRAMA_PARTIDA">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_PROG_PARTIDA" sqlStatement="SELECT ID_PROG_PARTIDA_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="PROGRAMA_PRES">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_PROGRAMA_PRES" sqlStatement="SELECT ID_PROGRAMA_PRES_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="PROYECTO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_PROYECTO" sqlStatement="SELECT ID_PROYECTO_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="RAMO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_RAMO" sqlStatement="SELECT ID_RAMO_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="TIPO_PROYECTO_CAT">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_TIPO_PROYECTO" sqlStatement="select MAX(ID_TIPO_PROYECTO) + 1 from TIPO_PROYECTO_CAT" identity="false" />
+        </table>
+        
+        <table tableName="TIPO_RECURSO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_TIPO_RECURSO" sqlStatement="SELECT ID_TIPO_RECURSO_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="UNIDAD_MEDIDA_CAT">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_UNIDAD_MEDIDA" sqlStatement="SELECT ID_UNIDAD_MEDIDA_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+    </context>
+    
+    <!-- Contexto de Administracion -->
+    
+    <context id="administracion" targetRuntime="MyBatis3">
+
+        <jdbcConnection 
+        	driverClass="oracle.jdbc.driver.OracleDriver" 
+        	connectionURL="jdbc:oracle:thin:@localhost:1521:xe" 
+        	userId="SFU" 
+        	password="123">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="mx.gob.shcp.dgtsi.sfu.administracion.model" targetProject="Prototype">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mx.gob.shcp.dgtsi.sfu.administracion.repository" targetProject="Prototype">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="mx.gob.shcp.dgtsi.sfu.administracion.repository" targetProject="Prototype">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+		
+		<!-- **************   Aquí empiezan las tablas ****************** -->
+
+
+        <table tableName="DETALLE_USUARIO_ROL">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_USUARIO_ROL" sqlStatement="SELECT ID_USUARIO_ROL_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="ROL">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_ROL" sqlStatement="SELECT ID_ROL_SEQ.nextval from Dual" identity="false" />
+        </table>
+        
+        <table tableName="USUARIO">
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="ID_USUARIO" sqlStatement="SELECT ID_USUARIO_SEQ.nextval from Dual" identity="false" />
+        </table>
+
+    </context>
+    
+</generatorConfiguration>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- DATASOURCES -->
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" lazy-init="true" autowire="default"
+        scope="prototype">
+        <property name="dataSource">
+            <ref bean="dataSource" />
+        </property>
+
+    </bean>
+
+    <!-- Remember to Modify META-INF/context.xml file for Developer or Production Environment -->
+<!--     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+<!--         <property name="jndiName" value="jdbc/OYCDS" /> -->
+<!--     </bean> -->
+<!-- 	<bean id="dataSource" -->
+<!-- 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />	 			  -->
+<!-- 			 <property name="url" value="jdbc:oracle:thin:@//172.28.7.73:1512/dsse"/> -->
+<!-- 			 <property name="username" value="PCAC"/>  -->
+<!-- 			 <property name="password" value="boston123"/>	 -->
+<!-- 	</bean> -->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />	 			 
+			 <property name="url" value="jdbc:oracle:thin:@//localhost:1521/xe"/>
+			 <property name="username" value="SFU"/> 
+			 <property name="password" value="123"/>	
+	</bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+        c:dataSource-ref="dataSource" />
+	
+    <!-- Configuration of MyBatis -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="mx.gob.shcp.dgtsi.sfu.**.repository" />
+	</bean>
+
+</beans>

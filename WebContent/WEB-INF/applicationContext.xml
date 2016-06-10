@@ -14,6 +14,11 @@
 	
 	<context:property-placeholder/>
 
+	<import resource="sfu-datasource.xml"/>
+	<import resource="sfu-service.xml"/>
+	
+	<bean id="mainController" class="mx.gob.shcp.dgtsi.sfu.controller.MainController" scope="prototype"/>
+	
     <!-- For autowired -->
     <context:component-scan base-package="mx.gob.shcp.dgtsi.sfu.**" />
     
@@ -31,4 +36,8 @@
 			expression="execution(* mx.gob.shcp.dgtsi.sfu.service.*Service.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
 	</aop:config>
+	
+	<!-- Factory de Spring para manejar la creacion de Beans -->
+    <bean id="springServiceFactory" class="mx.gob.shcp.dgtsi.sfu.util.SpringServiceFactory" scope="singleton" />
+    
 </beans>
