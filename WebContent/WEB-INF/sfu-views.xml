@@ -7,8 +7,9 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id="mainService" class="mx.gob.shcp.dgtsi.sfu.service.MainService" scope="prototype"/>
+	<bean id="mainController" class="mx.gob.shcp.dgtsi.sfu.controller.MainController" scope="prototype"/>
 	
-	<bean id="adminService" class="mx.gob.shcp.dgtsi.sfu.service.AdministracionService" scope="prototype"/>
+	<bean id="adminController" class="mx.gob.shcp.dgtsi.sfu.controller.AdminController" scope="prototype"/>
+	
 	
 </beans>

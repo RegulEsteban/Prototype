@@ -16,8 +16,7 @@
 
 	<import resource="sfu-datasource.xml"/>
 	<import resource="sfu-service.xml"/>
-	
-	<bean id="mainController" class="mx.gob.shcp.dgtsi.sfu.controller.MainController" scope="prototype"/>
+	<import resource="sfu-views.xml"/>
 	
     <!-- For autowired -->
     <context:component-scan base-package="mx.gob.shcp.dgtsi.sfu.**" />
